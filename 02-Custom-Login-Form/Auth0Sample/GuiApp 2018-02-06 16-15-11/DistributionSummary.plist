@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GuiApp.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>3B14EA995539BBED48912E41BF885BEDE35D0C39</string>
+				<key>dateExpires</key>
+				<string>20/1/19</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>embeddedBinaries</key>
+			<array>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>3B14EA995539BBED48912E41BF885BEDE35D0C39</string>
+						<key>dateExpires</key>
+						<string>20/1/19</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>Auth0.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>87LP2Q72UZ</string>
+						<key>name</key>
+						<string>Joaquin De La Torre</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>architectures</key>
+					<array>
+						<string>armv7</string>
+						<string>arm64</string>
+					</array>
+					<key>certificate</key>
+					<dict>
+						<key>SHA1</key>
+						<string>3B14EA995539BBED48912E41BF885BEDE35D0C39</string>
+						<key>dateExpires</key>
+						<string>20/1/19</string>
+						<key>type</key>
+						<string>iOS Development</string>
+					</dict>
+					<key>name</key>
+					<string>SimpleKeychain.framework</string>
+					<key>team</key>
+					<dict>
+						<key>id</key>
+						<string>87LP2Q72UZ</string>
+						<key>name</key>
+						<string>Joaquin De La Torre</string>
+					</dict>
+				</dict>
+			</array>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>87LP2Q72UZ.com.ticware.guiApp</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>87LP2Q72UZ</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>87LP2Q72UZ.com.ticware.guiApp</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>GuiApp.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>6496cc4a-c892-4932-8710-1cf232c4c446</string>
+				<key>name</key>
+				<string>ultimo profile</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>87LP2Q72UZ</string>
+				<key>name</key>
+				<string>Joaquin De La Torre</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
