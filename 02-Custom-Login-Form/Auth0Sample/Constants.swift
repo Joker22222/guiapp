@@ -35,7 +35,7 @@ struct Constants {
         static let descripcion = "descripcion"
         static let imagen = "imagen"
         static let idTipo = "idtipo"
-        static let tipo = "deportes"
+        static let tipo = "tipo"
         static let ubicacion = "ubicacion"
         static let fechaInicio = "fecinicio"
         static let fechaFin = "fecfin"

@@ -172,14 +172,33 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         }else{
             let cellCalendario = collectionView.dequeueReusableCell(withReuseIdentifier: "calendario", for: indexPath) as UICollectionViewCell
-            let calendarioImage = cellCalendario.viewWithTag(3) as! UIImageView
+    
+            let calendarioTipo = cellCalendario.viewWithTag(6) as! UILabel
+            let calendarioTitulo = cellCalendario.viewWithTag(7) as! UILabel
+            let calendarioDescripcion = cellCalendario.viewWithTag(8) as! UILabel
+            let calendarioFecha = cellCalendario.viewWithTag(9) as! UILabel
+            
             if (homeVM?.listaEventos != nil){
-                calendarioImage.downloadedFrom(link: (homeVM?.listaEventos![indexPath.row].imagen)!)
+    
+                calendarioTipo.text = homeVM?.listaEventos![indexPath.row].tipo
+                calendarioTitulo.text = homeVM?.listaEventos![indexPath.row].nombre
+                calendarioDescripcion.text = homeVM?.listaEventos![indexPath.row].descripcion
+                calendarioFecha.text = formatDate(dateString: (homeVM?.listaEventos![indexPath.row].fechaInicio)!)
             }
             return cellCalendario
         }
     }
 
+    func formatDate (dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.locale = Locale.init(identifier: "es_AR")
+        
+        let dateObj = dateFormatter.date(from: dateString)
+        
+        dateFormatter.dateFormat = "dd MMM"
+        return dateFormatter.string(from: dateObj!).uppercased()
+    }
 }
 
 extension ProfileViewController: HomeViewModelDelegate {
