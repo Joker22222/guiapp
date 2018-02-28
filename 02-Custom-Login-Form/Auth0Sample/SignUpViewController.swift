@@ -126,9 +126,8 @@ class SignUpViewController: UIViewController {
                     switch result {
                     case .success(let credentials):
                         self.retrievedCredentials = credentials
-                        
                         self.performSegue(withIdentifier: "DismissSignUp", sender: nil)
-                    case .failure(let error):
+                        case .failure(let error):
                         self.showAlertForError(error)
                     }
                 }

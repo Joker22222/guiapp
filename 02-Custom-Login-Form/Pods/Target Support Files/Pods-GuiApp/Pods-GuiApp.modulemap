@@ -1,0 +1,6 @@
+framework module Pods_GuiApp {
+  umbrella header "Pods-GuiApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

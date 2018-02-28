@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,13 +64,13 @@
                     <rect key="frame" x="0.0" y="118" width="414" height="45"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supermercados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvp-4K-aoe">
-                            <rect key="frame" x="71.000000000000014" y="9.9999999999999982" width="135.33333333333337" height="22.333333333333329"/>
+                            <rect key="frame" x="71" y="9.9999999999999982" width="119.33333333333331" height="24.333333333333329"/>
                             <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="19"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-NZ-g2Z">
-                            <rect key="frame" x="375" y="10.333333333333343" width="16" height="22"/>
+                            <rect key="frame" x="375" y="11.333333333333343" width="16" height="22"/>
                             <state key="normal" image="flecha"/>
                             <connections>
                                 <action selector="backTap:" destination="-1" eventType="touchUpInside" id="cFR-bi-H7W"/>
@@ -97,13 +97,13 @@
                     <rect key="frame" x="0.0" y="245" width="414" height="50"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supermax S.A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uH-Vg-uoU">
-                            <rect key="frame" x="70" y="13.999999999999998" width="122.33333333333331" height="22.333333333333329"/>
+                            <rect key="frame" x="70" y="12.999999999999998" width="107.66666666666669" height="24.333333333333329"/>
                             <fontDescription key="fontDescription" name="Dosis-Bold" family="Dosis" pointSize="19"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CUIT 23-28009577-3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOf-6D-JFB">
-                            <rect key="frame" x="242.66666666666663" y="16.333333333333314" width="151.33333333333337" height="18.666666666666671"/>
+                            <rect key="frame" x="262.33333333333331" y="15.666666666666684" width="131.66666666666669" height="20.333333333333329"/>
                             <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

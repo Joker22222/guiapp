@@ -32,6 +32,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     @IBOutlet weak var destacados: UICollectionView!
     @IBOutlet weak var recientes: UICollectionView!
     @IBOutlet weak var calendario: UICollectionView!
+    
+    var homeVM:  HomeViewModel?
+    let url = "https://artescritorio.com/wp-content/uploads/2015/11/monsterball-icon-pack.png"
     var imagenesDestacados: [UIImage] = [
         UIImage(named: "destacado1")!,
         UIImage(named: "destacado2")!,
@@ -84,8 +87,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         self.view.addSubview(destacados)
         self.view.addSubview(recientes)
         self.view.addSubview(calendario)
-       
-        
+        homeVM = HomeViewModel()
+        homeVM?.delegate = self
     }
     
     // MARK: - Private
@@ -119,11 +122,23 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          if collectionView == destacados{
-            return imagenesDestacados.count
+            if (homeVM?.listaPublicacionesDest != nil){
+                return (homeVM?.listaPublicacionesDest?.count)!
+            }else{
+                return 0
+            }
          }else if collectionView == recientes{
-            return imagenesRecientes.count
+            if (homeVM?.listaPublicaciones != nil){
+                return (homeVM?.listaPublicaciones?.count)!
+            }else{
+                return 0
+            }
          }else {
-            return imagenesCalendario.count
+            if (homeVM?.listaEventos != nil){
+                return (homeVM?.listaEventos?.count)!
+            }else{
+                return 0
+            }
         }
     }
     
@@ -131,22 +146,79 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         if collectionView == destacados{
             let cellDestacados = collectionView.dequeueReusableCell(withReuseIdentifier: "destacados", for: indexPath) as UICollectionViewCell
             let destacadosImage = cellDestacados.viewWithTag(1) as! UIImageView
+            let destacadoTitulo = cellDestacados.viewWithTag(5) as! UILabel
+            destacadosImage.image = nil
+            destacadoTitulo.text = nil
+            if (homeVM?.listaPublicacionesDest != nil){
+                destacadosImage.downloadedFrom(link: (homeVM?.listaPublicacionesDest![indexPath.row].imagen)!)
+                destacadoTitulo.text = homeVM?.listaPublicacionesDest![indexPath.row].titulo
+            }
             destacadosImage.image = imagenesDestacados[indexPath.row]
             return cellDestacados
+       
+        
         }else if collectionView == recientes{
             let cellRecientes = collectionView.dequeueReusableCell(withReuseIdentifier: "recientes", for: indexPath) as UICollectionViewCell
             let recientesImage = cellRecientes.viewWithTag(2) as! UIImageView
-            recientesImage.image = imagenesRecientes[indexPath.row]
+            let recintesTitulo = cellRecientes.viewWithTag(4) as! UILabel
+            recientesImage.image = nil
+            recintesTitulo.text = nil
+            if (homeVM?.listaPublicaciones != nil){
+                recientesImage.downloadedFrom(link: (homeVM?.listaPublicaciones![indexPath.row].imagen)!)
+                recintesTitulo.text = homeVM?.listaPublicaciones![indexPath.row].titulo
+            }
             return cellRecientes
+       
+        
         }else{
             let cellCalendario = collectionView.dequeueReusableCell(withReuseIdentifier: "calendario", for: indexPath) as UICollectionViewCell
             let calendarioImage = cellCalendario.viewWithTag(3) as! UIImageView
-            calendarioImage.image = imagenesCalendario[indexPath.row]
+            if (homeVM?.listaEventos != nil){
+                calendarioImage.downloadedFrom(link: (homeVM?.listaEventos![indexPath.row].imagen)!)
+            }
             return cellCalendario
         }
     }
 
+}
 
+extension ProfileViewController: HomeViewModelDelegate {
+    func finishedGettingPublicacionesDest() {
+        self.destacados.reloadData()
+    }
+    
+    func finishedGettingPublicaciones() {
+        self.recientes.reloadData()
+    }
+    
+    func finishedGettingEventos() {
+        self.calendario.reloadData()
+    }
+    
+    func finishedGettingEventosWithError(_ error: NSError) {
+        
+    }
+    
+    
+}
 
-
+extension UIImageView {
+    func downloadedFrom(url: URL) {
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url)
+    }
 }
