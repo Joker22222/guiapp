@@ -471,9 +471,6 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cY-Ac-cec">
                                                 <rect key="frame" x="0.0" y="0.0" width="53" height="55"/>
                                                 <state key="normal" image="moda"/>
-                                                <connections>
-                                                    <segue destination="jRI-f0-ag5" kind="show" id="dVN-01-aGf"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVm-9O-zqc">
                                                 <rect key="frame" x="129" y="0.0" width="53" height="55"/>
@@ -724,7 +721,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VK5-gM-UAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2162.4000000000001" y="714.69265367316348"/>
+            <point key="canvasLocation" x="2151" y="706"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="6RJ-aa-32F">
@@ -752,11 +749,12 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="hko-2g-oYo" id="Zom-7t-wts"/>
+                        <segue destination="Hkj-1u-tQ9" kind="show" identifier="showResultados" id="zND-eg-ueD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fyp-No-AsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="1567"/>
+            <point key="canvasLocation" x="2015" y="1652"/>
         </scene>
         <!--Resultado Busqueda View Controller-->
         <scene sceneID="Dk1-rU-A9b">
@@ -2642,7 +2640,7 @@ BccKxxLHFccaxyLHJcc3xzrHPwAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAMdBA
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wng-tI-lQR"/>
-        <segue reference="EGr-Mr-Vyd"/>
+        <segue reference="Z1v-Ew-ZbN"/>
         <segue reference="oIz-Zd-MTd"/>
     </inferredMetricsTieBreakers>
 </document>

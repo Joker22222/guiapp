@@ -15,6 +15,7 @@ struct Constants {
         static let eventosLista = "evento/l"
         static let publicacionesLista = "publicacion/listabackoffice"
         static let publicacionesDestLista = "publicacion/destacadas"
+        static let resultadoDeBusquedaParam = "empresa/b"
     }
 
     struct Publicaciones {
@@ -45,4 +46,22 @@ struct Constants {
         static let horaFin = "horafin"
     }
     
+    struct ResultadosDeBusqueda {
+        static let id = "id"
+        static let idEmpresa = "idempresa"
+        static let razonSocial = "razonsocial"
+        static let estado = "estado"
+        static let idCategoria = "idcategoria"
+        static let direccion = "direccion"
+        static let idPais = "idpais"
+        static let idProvincia = "idprovincia"
+        static let idLocalidad = "idlocalidad"
+        static let telefono = "telefono"
+        static let delivery = "delivery"
+        static let veinticuatrohs = "veinticuatrohs"
+        static let diasHorarios = "diashorarios"
+        static let dirty = "dirty"
+        static let palabrasClave = "palabrasClave"
+        static let distancia = "distancia"
+    }
 }

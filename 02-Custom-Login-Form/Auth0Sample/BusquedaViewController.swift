@@ -15,6 +15,10 @@ class BusquedaViewController: UIViewController {
     @IBOutlet weak var btnBuscar: UIButton!
     @IBOutlet weak var btnModa: NSLayoutConstraint!
     
+    var latitud: String?
+    var longitud: String?
+    var param: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

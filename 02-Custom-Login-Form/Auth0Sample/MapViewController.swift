@@ -14,6 +14,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UIGestureR
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
+    var latitud: String?
+    var longitud: String?
+    var param: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UIGestureR
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResultados" {
+            let nextScene =  segue.destination as! BusquedaViewController
+            nextScene.latitud = latitud
+            nextScene.longitud = longitud
+            nextScene.param = param
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
         let location = locations[0]
@@ -53,6 +65,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UIGestureR
         if gestureRecognizer.state != UIGestureRecognizerState.began { return }
         let touchLocation = gestureRecognizer.location(in: mapView)
         let locationCoordinate = mapView.convert(touchLocation, toCoordinateFrom: mapView)
-        print("Tapped at lat: \(locationCoordinate.latitude) long: \(locationCoordinate.longitude)")
+        latitud = String(locationCoordinate.latitude)
+        longitud = String(locationCoordinate.longitude)
+        param = ""
+        performSegue(withIdentifier: "showResultados", sender: nil)
     }
 }

@@ -66,4 +66,28 @@ class APIClient {
                 }
             })
     }
+    
+    class func getResultadosDeBusquedaParam(_ parametros:[[String: Any]], completion:@escaping (_ resultArray: ResultadosDeBusqueda?, _ error: NSError?)->()){
+        
+        var request = URLRequest(url: URL(string:Constants.URL.base + Constants.URL.resultadoDeBusquedaParam)!)
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parametros)
+        
+        Alamofire.request(request)
+            .responseJSON(completionHandler: { (response) -> Void in
+                switch response.result{
+                case.success(let value):
+                    let json = JSON(value)
+                    let publicacionObject = ResultadosDeBusqueda(json: json)
+                    OperationQueue.main.addOperation({ () -> Void in
+                        completion(publicacionObject, nil)
+                    })
+                    
+                case .failure(let error):
+                    return
+                }
+            })
+    }
+    
 }
