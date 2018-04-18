@@ -52,6 +52,8 @@
 		EDA58A3720465DE2001B6C41 /* PublicacionDest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA58A3620465DE2001B6C41 /* PublicacionDest.swift */; };
 		EDA58A3920465E52001B6C41 /* PublicacionesDest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA58A3820465E52001B6C41 /* PublicacionesDest.swift */; };
 		EDB60D1F2029EB91000EA95C /* EditarPublicacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB60D1E2029EB91000EA95C /* EditarPublicacionViewController.swift */; };
+		EDE2996520863AE900A2B5C1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE2996420863AE900A2B5C1 /* MapKit.framework */; };
+		EDE2996720863BF800A2B5C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE2996620863BF800A2B5C1 /* MapViewController.swift */; };
 		EDF84217202A215D009F153F /* MisPublicacionesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF84216202A215D009F153F /* MisPublicacionesViewController.swift */; };
 		EDF84219202A283D009F153F /* MisPublicacionesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF84218202A283D009F153F /* MisPublicacionesTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -108,6 +110,8 @@
 		EDA58A3620465DE2001B6C41 /* PublicacionDest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicacionDest.swift; sourceTree = "<group>"; };
 		EDA58A3820465E52001B6C41 /* PublicacionesDest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicacionesDest.swift; sourceTree = "<group>"; };
 		EDB60D1E2029EB91000EA95C /* EditarPublicacionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPublicacionViewController.swift; sourceTree = "<group>"; };
+		EDE2996420863AE900A2B5C1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		EDE2996620863BF800A2B5C1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		EDF84216202A215D009F153F /* MisPublicacionesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisPublicacionesViewController.swift; sourceTree = "<group>"; };
 		EDF84218202A283D009F153F /* MisPublicacionesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MisPublicacionesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 			files = (
 				ED627CF31FE821BF0035B49B /* FBSDKCoreKit.framework in Frameworks */,
 				ED627CF41FE821BF0035B49B /* FBSDKLoginKit.framework in Frameworks */,
+				EDE2996520863AE900A2B5C1 /* MapKit.framework in Frameworks */,
 				ED627CF21FE821BF0035B49B /* Bolts.framework in Frameworks */,
 				DE7E78FD5D251D7D5F89CF8B /* Pods_GuiApp.framework in Frameworks */,
 			);
@@ -157,6 +162,7 @@
 				EDB60D1E2029EB91000EA95C /* EditarPublicacionViewController.swift */,
 				EDF84216202A215D009F153F /* MisPublicacionesViewController.swift */,
 				EDF84218202A283D009F153F /* MisPublicacionesTableViewCell.swift */,
+				EDE2996620863BF800A2B5C1 /* MapViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -216,6 +222,7 @@
 		926A065C4BD9E7294005CAED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EDE2996420863AE900A2B5C1 /* MapKit.framework */,
 				90EF8C200A64206E49931699 /* Pods_GuiApp.framework */,
 			);
 			name = Frameworks;
@@ -342,8 +349,14 @@
 				TargetAttributes = {
 					51E4B6AD1D0B4819000D9038 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 87LP2Q72UZ;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -484,6 +497,7 @@
 				51992FCA1D19B8A500140478 /* ErrorHandling.swift in Sources */,
 				ED1E28E21FFDC76F00FCF8FB /* SessionManager.swift in Sources */,
 				51626D651D11A6F500CF162C /* LoginViewController.swift in Sources */,
+				EDE2996720863BF800A2B5C1 /* MapViewController.swift in Sources */,
 				EDA58A3920465E52001B6C41 /* PublicacionesDest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,7 +634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 87LP2Q72UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/New\\ Group",
@@ -645,7 +659,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 87LP2Q72UZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/New\\ Group",

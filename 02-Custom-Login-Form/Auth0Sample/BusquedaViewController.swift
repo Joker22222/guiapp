@@ -10,6 +10,9 @@ import UIKit
 
 class BusquedaViewController: UIViewController {
 
+    @IBOutlet weak var busquedaTextField: UITextField!
+    
+    @IBOutlet weak var btnBuscar: UIButton!
     @IBOutlet weak var btnModa: NSLayoutConstraint!
     
     override func viewDidLoad() {
