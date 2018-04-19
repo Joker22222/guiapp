@@ -45,7 +45,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, UIGestureR
             let nextScene =  segue.destination as! BusquedaViewController
             nextScene.latitud = latitud
             nextScene.longitud = longitud
-            nextScene.param = param
         }
     }
     

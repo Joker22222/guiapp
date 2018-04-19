@@ -16,6 +16,8 @@ struct Constants {
         static let publicacionesLista = "publicacion/listabackoffice"
         static let publicacionesDestLista = "publicacion/destacadas"
         static let resultadoDeBusquedaParam = "empresa/b"
+        static let resultadoDeBusquedaCat = "empresa/c2"
+        static let publicidad = "publicidad/2"
     }
 
     struct Publicaciones {
@@ -63,5 +65,14 @@ struct Constants {
         static let dirty = "dirty"
         static let palabrasClave = "palabrasClave"
         static let distancia = "distancia"
+    }
+    
+    struct Publicidad {
+        static let id = "id"
+        static let idSponsor = "idsponsor"
+        static let fecInicio = "fecinicio"
+        static let fecFin = "fecfin"
+        static let imagen = "imagen"
+        static let url = "url"
     }
 }

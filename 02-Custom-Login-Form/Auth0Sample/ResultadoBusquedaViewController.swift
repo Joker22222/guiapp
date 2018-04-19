@@ -17,13 +17,14 @@ class ResultadoBusquedaViewController: UIViewController, UITableViewDataSource, 
     var param: String?
     var latitud: String?
     var longitud: String?
+    var cat: String?
     var viewModel: ResultadoDeBusquedaViewModel?
     var resultadosDeBusqueda : ResultadosDeBusqueda?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = ResultadoDeBusquedaViewModel(parametro: param!, latitud: latitud!, longitud: longitud!)
+        viewModel = ResultadoDeBusquedaViewModel(parametro: param!, latitud: latitud!, longitud: longitud!, cat: cat!)
         viewModel?.delegate = self
         
     }
@@ -52,11 +53,25 @@ class ResultadoBusquedaViewController: UIViewController, UITableViewDataSource, 
         }else{
             return (viewModel!.listaResultadosDeBusqueda?.count)!}
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 69
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultadoCell", for: indexPath) as! ResultadoBusquedaTableViewCell
         cell.selectionStyle = .none
         cell.lblnombre.text = viewModel?.listaResultadosDeBusqueda![indexPath.row].razonSocial
+        cell.lblDireccion.text = viewModel?.listaResultadosDeBusqueda![indexPath.row].direccion
+        cell.lblComentario.text = viewModel?.listaResultadosDeBusqueda![indexPath.row].estado
+        if (viewModel?.listaResultadosDeBusqueda![indexPath.row].veinticuatroHs == "1"){
+            cell.img24hs.isHidden = false
+        }else{
+            cell.img24hs.isHidden = true
+        }
+        if (viewModel?.listaResultadosDeBusqueda![indexPath.row].delivery == "1"){
+            cell.imgEnvios.isHidden = false
+        }else{
+            cell.imgEnvios.isHidden = true
+        }
         return cell
     }
     

@@ -10,7 +10,12 @@ import UIKit
 
 class ResultadoBusquedaTableViewCell: UITableViewCell {
     @IBOutlet weak var lblnombre: UILabel!
+   
+    @IBOutlet weak var lblComentario: UILabel!
     
+    @IBOutlet weak var img24hs: UIImageView!
+    @IBOutlet weak var lblDireccion: UILabel!
+    @IBOutlet weak var imgEnvios: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
