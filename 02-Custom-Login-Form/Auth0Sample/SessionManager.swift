@@ -10,16 +10,20 @@ import Foundation
 import SimpleKeychain
 import Auth0
 
-class SessionManager {
+class SessionManager : UsuarioViewModelDelegate {
+    
     static let shared = SessionManager()
     private let authentication = Auth0.authentication()
     let credentialsManager: CredentialsManager!
     var profile: UserInfo?
     var credentials: Credentials?
+    var viewModel : UsuarioViewModel?
     
     private init () {
         self.credentialsManager = CredentialsManager(authentication: Auth0.authentication())
         _ = self.authentication.logging(enabled: true) // API Logging
+        viewModel = UsuarioViewModel()
+        viewModel?.delegate = self
     }
     
     func retrieveProfile(_ callback: @escaping (Error?) -> ()) {
@@ -31,6 +35,12 @@ class SessionManager {
                 switch(result) {
                 case .success(let profile):
                     self.profile = profile
+                    if (UserDefaults.standard.string(forKey: "Mail") == nil){
+                        UserDefaults.standard.set(profile.email, forKey: "Mail")
+                        UserDefaults.standard.set(profile.name, forKey: "Name")
+                        self.viewModel?.guardar(id: profile.email, nombre: profile.name)
+                    }
+                
                     callback(nil)
                 case .failure(let error):
                     callback(error)
@@ -66,6 +76,10 @@ class SessionManager {
         // Store credentials in KeyChain
         return self.credentialsManager.store(credentials: credentials)
     }
+    func finishSendingUsuario() {
+        
+    }
+    
 }
 
 

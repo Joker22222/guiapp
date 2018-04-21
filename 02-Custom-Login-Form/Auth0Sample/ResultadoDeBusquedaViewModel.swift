@@ -25,6 +25,8 @@ class ResultadoDeBusquedaViewModel{
     convenience init (parametro: String, latitud: String, longitud:String, cat: String){
         self.init()
         if (cat == ""){
+            
+            
             let parameters : [[String: Any]] = [[
                 "param":parametro,
                 "latitud":latitud,

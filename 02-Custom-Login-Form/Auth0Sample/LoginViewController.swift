@@ -117,7 +117,7 @@ class LoginViewController: UIViewController {
             .webAuth()
             .audience("https://" + clientInfo.domain + "/userinfo")
             .connection("facebook")
-            .scope("openid")
+            .scope("openid profile email")
             .start { result in
                 DispatchQueue.main.async {
                     self.spinner.stopAnimating()

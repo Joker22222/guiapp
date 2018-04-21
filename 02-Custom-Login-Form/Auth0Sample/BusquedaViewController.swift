@@ -111,5 +111,10 @@ class BusquedaViewController: UIViewController, BusquedaViewModelDelegate {
     func finishGettingPublicidad() {
         imgPublicidad.downloadedFrom(link: (viewModel?.publicidades?.publicidades[0].imagen)!)
     }
+    @IBAction func tapText(_ sender: Any) {
+    view.endEditing(true)
+    }
+    
+    
 }
 

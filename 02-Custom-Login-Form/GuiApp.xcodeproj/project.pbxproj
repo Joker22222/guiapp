@@ -10,6 +10,12 @@
 		2EA7B4CE2088492D0017CEE6 /* Publicidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7B4CD2088492D0017CEE6 /* Publicidad.swift */; };
 		2EA7B4D020884B8C0017CEE6 /* Publicidades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7B4CF20884B8C0017CEE6 /* Publicidades.swift */; };
 		2EA7B4D220884EE00017CEE6 /* BusquedaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA7B4D120884EE00017CEE6 /* BusquedaViewModel.swift */; };
+		2EBA11242088E1BA009A686A /* EmpresasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA11232088E1BA009A686A /* EmpresasViewController.swift */; };
+		2EBA11262088E27D009A686A /* EmpresasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA11252088E27D009A686A /* EmpresasTableViewCell.swift */; };
+		2EBA112820893D4B009A686A /* EmpresaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBA112720893D4B009A686A /* EmpresaViewModel.swift */; };
+		2EFE010B208A19C60038940C /* UsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE010A208A19C60038940C /* UsuarioViewModel.swift */; };
+		2EFE010E208A2B470038940C /* Empresa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE010D208A2B470038940C /* Empresa.swift */; };
+		2EFE0110208A2D9F0038940C /* Empresas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE010F208A2D9F0038940C /* Empresas.swift */; };
 		512FCB651D5A6B90004092B8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FCB641D5A6B90004092B8 /* Extensions.swift */; };
 		51626D651D11A6F500CF162C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51626D641D11A6F500CF162C /* LoginViewController.swift */; };
 		51626D671D11BFA200CF162C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51626D661D11BFA200CF162C /* SignUpViewController.swift */; };
@@ -68,6 +74,12 @@
 		2EA7B4CD2088492D0017CEE6 /* Publicidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publicidad.swift; sourceTree = "<group>"; };
 		2EA7B4CF20884B8C0017CEE6 /* Publicidades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publicidades.swift; sourceTree = "<group>"; };
 		2EA7B4D120884EE00017CEE6 /* BusquedaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusquedaViewModel.swift; sourceTree = "<group>"; };
+		2EBA11232088E1BA009A686A /* EmpresasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpresasViewController.swift; sourceTree = "<group>"; };
+		2EBA11252088E27D009A686A /* EmpresasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpresasTableViewCell.swift; sourceTree = "<group>"; };
+		2EBA112720893D4B009A686A /* EmpresaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpresaViewModel.swift; sourceTree = "<group>"; };
+		2EFE010A208A19C60038940C /* UsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioViewModel.swift; sourceTree = "<group>"; };
+		2EFE010D208A2B470038940C /* Empresa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empresa.swift; sourceTree = "<group>"; };
+		2EFE010F208A2D9F0038940C /* Empresas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empresas.swift; sourceTree = "<group>"; };
 		512FCB641D5A6B90004092B8 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		51626D641D11A6F500CF162C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		51626D661D11BFA200CF162C /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +165,15 @@
 			name = Publicidad;
 			sourceTree = "<group>";
 		};
+		2EFE010C208A2B1B0038940C /* Empresas */ = {
+			isa = PBXGroup;
+			children = (
+				2EFE010D208A2B470038940C /* Empresa.swift */,
+				2EFE010F208A2D9F0038940C /* Empresas.swift */,
+			);
+			name = Empresas;
+			sourceTree = "<group>";
+		};
 		51B8DDF31D1B0F92001299EC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +205,8 @@
 				EDF84216202A215D009F153F /* MisPublicacionesViewController.swift */,
 				EDF84218202A283D009F153F /* MisPublicacionesTableViewCell.swift */,
 				EDE2996620863BF800A2B5C1 /* MapViewController.swift */,
+				2EBA11232088E1BA009A686A /* EmpresasViewController.swift */,
+				2EBA11252088E27D009A686A /* EmpresasTableViewCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -259,6 +282,7 @@
 		ED18983D2044F73A004E2C93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2EFE010C208A2B1B0038940C /* Empresas */,
 				2EA7B4CC208849120017CEE6 /* Publicidad */,
 				ED5D8D4F20876CB100291715 /* Resultados De Busqueda */,
 				EDA58A3520465D88001B6C41 /* Publicaciones Dest */,
@@ -335,6 +359,8 @@
 				EDA58A2D20450746001B6C41 /* HomeViewModel.swift */,
 				ED5D8D4D20876B3700291715 /* ResultadoDeBusquedaViewModel.swift */,
 				2EA7B4D120884EE00017CEE6 /* BusquedaViewModel.swift */,
+				2EBA112720893D4B009A686A /* EmpresaViewModel.swift */,
+				2EFE010A208A19C60038940C /* UsuarioViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -516,15 +542,20 @@
 				2EA7B4CE2088492D0017CEE6 /* Publicidad.swift in Sources */,
 				ED9B0CF320295107008B5E13 /* EditarSucursalViewController.swift in Sources */,
 				51626D671D11BFA200CF162C /* SignUpViewController.swift in Sources */,
+				2EFE010B208A19C60038940C /* UsuarioViewModel.swift in Sources */,
 				ED0CB8E920090C82003DBB48 /* ResultadoBusquedaTableViewCell.swift in Sources */,
 				EDA58A3020450840001B6C41 /* APIClient.swift in Sources */,
 				2EA7B4D020884B8C0017CEE6 /* Publicidades.swift in Sources */,
 				EDF84217202A215D009F153F /* MisPublicacionesViewController.swift in Sources */,
+				2EBA112820893D4B009A686A /* EmpresaViewModel.swift in Sources */,
 				ED0CB8E7200903DC003DBB48 /* BusquedaViewController.swift in Sources */,
 				2EA7B4D220884EE00017CEE6 /* BusquedaViewModel.swift in Sources */,
 				ED0CB8EE2009218C003DBB48 /* DetalleBusquedaViewController.swift in Sources */,
+				2EFE010E208A2B470038940C /* Empresa.swift in Sources */,
 				EDA58A2920450222001B6C41 /* Evento.swift in Sources */,
 				ED5D8D5120876D1F00291715 /* ResultadoDeBusqueda.swift in Sources */,
+				2EBA11262088E27D009A686A /* EmpresasTableViewCell.swift in Sources */,
+				2EFE0110208A2D9F0038940C /* Empresas.swift in Sources */,
 				51E4B6B21D0B4819000D9038 /* AppDelegate.swift in Sources */,
 				ED4FEF0620293F9A003E6B4E /* DetalleSucursal.swift in Sources */,
 				EDA58A3720465DE2001B6C41 /* PublicacionDest.swift in Sources */,
@@ -534,6 +565,7 @@
 				ED5D8D4E20876B3700291715 /* ResultadoDeBusquedaViewModel.swift in Sources */,
 				51A8A0BA1D0B4C0C000E53CC /* ProfileViewController.swift in Sources */,
 				51992FCA1D19B8A500140478 /* ErrorHandling.swift in Sources */,
+				2EBA11242088E1BA009A686A /* EmpresasViewController.swift in Sources */,
 				ED1E28E21FFDC76F00FCF8FB /* SessionManager.swift in Sources */,
 				51626D651D11A6F500CF162C /* LoginViewController.swift in Sources */,
 				EDE2996720863BF800A2B5C1 /* MapViewController.swift in Sources */,

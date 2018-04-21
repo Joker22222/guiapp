@@ -93,32 +93,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     // MARK: - Private
     
-    fileprivate func retrieveProfile() {
-        guard let accessToken = loginCredentials.accessToken else {
-            print("Error retrieving profile")
-            let _ = self.navigationController?.popViewController(animated: true)
-            return
-        }
-        Auth0
-            .authentication()
-            .userInfo(withAccessToken: accessToken)
-            .start { result in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let profile):
-                        guard let pictureURL = profile.picture else { return }
-                        let task = URLSession.shared.dataTask(with: pictureURL) { (data, response, error) in
-                            guard let _ = data , error == nil else { return }
-                            DispatchQueue.main.async {
-                            }
-                        }
-                        task.resume()
-                    case .failure(let error):
-                        self.showAlertForError(error)
-                    }
-                }
-        }
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          if collectionView == destacados{

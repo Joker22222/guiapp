@@ -67,6 +67,7 @@ class APIClient {
             })
     }
     
+    //BUSQUEDA PARAM
     class func getResultadosDeBusquedaParam(_ parametros:[[String: Any]], completion:@escaping (_ resultArray: ResultadosDeBusqueda?, _ error: NSError?)->()){
         
         var request = URLRequest(url: URL(string:Constants.URL.base + Constants.URL.resultadoDeBusquedaParam)!)
@@ -90,6 +91,7 @@ class APIClient {
             })
     }
     
+    //BUSQUEDA CAT
     class func getResultadosDeBusquedaCat(_ parametros:[[String: Any]], completion:@escaping (_ resultArray: ResultadosDeBusqueda?, _ error: NSError?)->()){
         
         var request = URLRequest(url: URL(string:Constants.URL.base + Constants.URL.resultadoDeBusquedaCat)!)
@@ -113,7 +115,7 @@ class APIClient {
             })
     }
     
-    
+    //PUBLICIDAD
     class func getPublicidad(completion:@escaping (_ resultArray: Publicidades?, _ error: NSError?)->()){
         Alamofire.request(Constants.URL.base + Constants.URL.publicidad, method: .get, encoding: JSONEncoding.default)
             .responseJSON(completionHandler: { (response) -> Void in
@@ -124,11 +126,89 @@ class APIClient {
                     OperationQueue.main.addOperation({ () -> Void in
                         completion(publicidadesObject, nil)
                     })
-                    
                 case .failure(let error):
                     return
                 }
             })
     }
     
+    //POST EMPRESAS
+    class func postEmpresas(_ parametros:[String: Any], completion:@escaping (_ error: NSError?)->()){
+        
+        var request = URLRequest(url: URL(string:Constants.URL.base + Constants.URL.postEmpresas)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parametros)
+        
+        Alamofire.request(request).responseJSON
+            { (response:DataResponse<Any>) in
+                if let responseStatus = (response.response?.statusCode) {
+                    switch responseStatus {
+                    case 200 :
+                        //not parsing group ID here
+                        completion(nil)
+                    default :
+                        return
+                    }
+                }
+        }
+    }
+    
+    class func postUsuarios(_ parametros:[String: Any], completion:@escaping (_ error: NSError?)->()){
+        
+        var request = URLRequest(url: URL(string:Constants.URL.base + Constants.URL.postUsuarios)!)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parametros)
+        
+        Alamofire.request(request).responseJSON
+            { (response:DataResponse<Any>) in
+                if let responseStatus = (response.response?.statusCode) {
+                    switch responseStatus {
+                    case 200 :
+                        //not parsing group ID here
+                        completion(nil)
+                    default :
+                        return
+                    }
+                }
+        }
+    }
+    
+    class func getEmpresas(_ id:String, completion:@escaping (_ resultArray: Empresas?, _ error: NSError?)->()){
+        Alamofire.request(Constants.URL.base + Constants.URL.getEmpresas + id, method: .get, encoding: JSONEncoding.default)
+            .responseJSON(completionHandler: { (response) -> Void in
+                switch response.result{
+                case.success(let value):
+                    let json = JSON(value)
+                    let publicidadesObject = Empresas(json: json)
+                    OperationQueue.main.addOperation({ () -> Void in
+                        completion(publicidadesObject, nil)
+                    })
+                case .failure(let error):
+                    return
+                }
+            })
+    }
+    
+    class func putEmpresas(_ id:String, _ parametros:[String: Any], completion:@escaping (_ error: NSError?)->()){
+        
+        var request = URLRequest(url: URL(string:Constants.URL.base + Constants.URL.postEmpresas + "/" + id)!)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try! JSONSerialization.data(withJSONObject: parametros)
+        
+        Alamofire.request(request).responseJSON
+            { (response:DataResponse<Any>) in
+                if let responseStatus = (response.response?.statusCode) {
+                    switch responseStatus {
+                    case 200 :
+                        //not parsing group ID here
+                        completion(nil)
+                    default :
+                        return
+                    }
+                }
+        }
+    }
 }

@@ -18,6 +18,9 @@ struct Constants {
         static let resultadoDeBusquedaParam = "empresa/b"
         static let resultadoDeBusquedaCat = "empresa/c2"
         static let publicidad = "publicidad/2"
+        static let postEmpresas = "empresa"
+        static let postUsuarios = "cuenta"
+        static let getEmpresas = "empresa/xcuenta/"
     }
 
     struct Publicaciones {
@@ -74,5 +77,22 @@ struct Constants {
         static let fecFin = "fecfin"
         static let imagen = "imagen"
         static let url = "url"
+    }
+    
+    struct Empresa {
+        static let id = "id"
+        static let razonSocial = "razonsocial"
+        static let cuit = "cuit"
+        static let medioDePago = "mediodepago"
+        static let estado = "estado"
+        static let logo = "logo"
+        static let facebook = "facebook"
+        static let instagram = "instagram"
+        static let twitter = "twitter"
+        static let palabrasclave = "palabrasclave"
+        static let dirty = "dirty"
+        static let web = "web"
+        static let descripcion = "descripcion"
+        static let idCuenta = "idcuenta"
     }
 }
